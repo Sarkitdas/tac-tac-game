@@ -1,6 +1,7 @@
 let findBoxes = document.querySelectorAll(".box");
 let resetButton = document.querySelector(".resetBtn");
 let findWin = document.querySelector(".win-container");
+let newfindwin=document.querySelector(".newwin-container");
 
 let turn = true;
 
@@ -45,7 +46,7 @@ checkWinner = () => {
 
     if (pos1 != "" && pos2 != "" && pos3 != "") {
       if (pos1 === pos2 && pos2 === pos3) {
-        findWin.append(pos1);
+        findWin.innerText=pos1;
         disableButton();
       }
     }
@@ -59,6 +60,7 @@ const resetBox=()=>{
     box.disabled=false;
     box.innerText="";
   }
+  findWin.innerText="";
 }
 
 
