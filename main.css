@@ -1,0 +1,67 @@
+body{
+    text-align: center;
+    background-color: aquamarine;
+}
+.container{
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8vmin;
+}
+
+h1{
+    font-size: 5vmin;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: rgb(253, 253, 255);
+    background-color:rgb(186, 13, 65);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 400px 10px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.msg-container{
+    font-size: 3vmin;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: rgb(33, 33, 219);
+    background-color:rgb(235, 176, 99);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px 400px 10px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8vmin;
+}
+
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: 8vmin;
+    color: chocolate;
+    background-color: antiquewhite;
+}
+.resetBtn{
+    font-size: 3vmin;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif; 
+    color: white;
+    background-color: brown;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+
