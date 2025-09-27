@@ -1,42 +1,54 @@
-body{
+body {
     text-align: center;
     background-color: aquamarine;
+    margin: 0;
+    padding: 0;
 }
-.container{
-    height: 65vh;
+
+/* Main container */
+.container {
+    height: auto;
+    min-height: 65vh;
     display: flex;
+    flex-direction: column; /* stack in small screens */
     justify-content: center;
     align-items: center;
     gap: 1.8vmin;
+    padding: 1rem;
 }
 
-h1{
-    font-size: 5vmin;
+/* Title */
+h1 {
+    font-size: clamp(1.5rem, 5vmin, 3rem); /* scales with screen size */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
-    color: rgb(253, 253, 255);
-    background-color:rgb(186, 13, 65);
+    color: #fdfdff;
+    background-color: rgb(186, 13, 65);
     border-radius: 5px;
-    padding: 10px;
-    margin: 10px 400px 10px;
+    padding: 10px 20px;
+    margin: 1rem auto;
+    max-width: 90%; /* prevent overflow */
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 
-.msg-container{
-    font-size: 3vmin;
+/* Message box */
+.msg-container {
+    font-size: clamp(1rem, 3vmin, 1.5rem);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
     color: rgb(33, 33, 219);
-    background-color:rgb(235, 176, 99);
+    background-color: rgb(235, 176, 99);
     border-radius: 5px;
-    padding: 5px;
-    margin: 10px 400px 10px;
+    padding: 10px 20px;
+    margin: 1rem auto;
+    max-width: 90%;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 
-.game{
-    height: 60vmin;
-    width: 60vmin;
+/* Game grid */
+.game {
+    height: auto;
+    width: min(90vmin, 90%); /* responsive width */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -44,24 +56,47 @@ h1{
     gap: 1.8vmin;
 }
 
-.box{
-    height: 18vmin;
-    width: 18vmin;
+/* Individual box */
+.box {
+    flex: 1 1 calc(33.33% - 1.8vmin); /* makes 3 per row */
+    aspect-ratio: 1 / 1; /* keep square */
     border-radius: 1rem;
     border: none;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     font-size: 8vmin;
     color: chocolate;
     background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.resetBtn{
-    font-size: 3vmin;
-    padding: 20px;
-    font-family: 'Times New Roman', Times, serif; 
+
+/* Reset button */
+.resetBtn {
+    font-size: clamp(1rem, 2.5vmin, 1.5rem);
+    padding: 0.8rem 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
     color: white;
     background-color: brown;
     border-radius: 0.5rem;
     border: none;
+    margin-top: 1.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
+.resetBtn:hover {
+    background-color: darkred;
+}
+
+/* Media Queries for Extra Small Screens */
+@media (max-width: 480px) {
+    h1, .msg-container {
+        font-size: 1.2rem;
+        padding: 8px;
+    }
+    .box {
+        font-size: 12vmin; /* bigger for small screens */
+    }
+}
